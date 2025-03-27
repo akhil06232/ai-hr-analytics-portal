@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -15,6 +14,8 @@ import {
   Settings, Mic, Construction, Building, 
   BarChartHorizontal, ArrowRight, Download
 } from 'lucide-react';
+import { ConstructionSiteViewer } from '@/components/analytics/ConstructionSiteViewer';
+import { ConversationalInterface } from '@/components/analytics/ConversationalInterface';
 
 // Sample analytics data
 const employeeData = [
@@ -81,7 +82,6 @@ const Analytics = () => {
               </TabsTrigger>
             </TabsList>
             
-            {/* Analytics Studio Content */}
             <TabsContent value="analytics" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <Card className="md:col-span-2">
@@ -264,134 +264,10 @@ const Analytics = () => {
               </div>
             </TabsContent>
             
-            {/* Conversational AI Content */}
             <TabsContent value="conversational">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Conversational AI Interface</CardTitle>
-                  <CardDescription>
-                    Natural language processing and voice recognition capabilities
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <div className="bg-muted p-6 rounded-lg h-80 flex flex-col">
-                        <div className="flex-1 overflow-y-auto space-y-4">
-                          <div className="bg-primary/10 p-3 rounded-lg max-w-[80%]">
-                            <p className="text-sm">Hello, how can I help you today?</p>
-                          </div>
-                          <div className="bg-secondary p-3 rounded-lg max-w-[80%] ml-auto">
-                            <p className="text-sm">Show me the employee turnover rate for the engineering department.</p>
-                          </div>
-                          <div className="bg-primary/10 p-3 rounded-lg max-w-[80%]">
-                            <p className="text-sm">The engineering department has a 7.2% annual turnover rate, which is 2.3% lower than last year.</p>
-                          </div>
-                          <div className="bg-secondary p-3 rounded-lg max-w-[80%] ml-auto">
-                            <p className="text-sm">What's causing the improvement?</p>
-                          </div>
-                          <div className="bg-primary/10 p-3 rounded-lg max-w-[80%]">
-                            <p className="text-sm">Analysis shows that the improved retention is correlated with the new flexible work policy and increased compensation packages implemented last quarter.</p>
-                          </div>
-                        </div>
-                        <div className="pt-4 flex gap-2">
-                          <input 
-                            type="text" 
-                            placeholder="Ask a question..." 
-                            className="flex-1 px-3 py-2 rounded-md border border-input bg-background text-sm ring-offset-background" 
-                          />
-                          <Button>
-                            <Mic className="h-4 w-4" />
-                          </Button>
-                        </div>
-                      </div>
-                      <div className="flex justify-center">
-                        <Button variant="outline">
-                          Configure Voice Assistant
-                        </Button>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="font-medium text-lg">Voice & NLP Capabilities</h3>
-                      <div className="space-y-3">
-                        <div className="flex items-start space-x-3">
-                          <div className="p-2 bg-primary/10 rounded-full">
-                            <Mic className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <h4 className="font-medium text-sm">Voice Recognition</h4>
-                            <p className="text-xs text-muted-foreground">
-                              Advanced speech-to-text capabilities with multi-language support
-                            </p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start space-x-3">
-                          <div className="p-2 bg-primary/10 rounded-full">
-                            <Brain className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <h4 className="font-medium text-sm">Natural Language Understanding</h4>
-                            <p className="text-xs text-muted-foreground">
-                              Context-aware NLP for comprehending complex queries
-                            </p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start space-x-3">
-                          <div className="p-2 bg-primary/10 rounded-full">
-                            <Eye className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <h4 className="font-medium text-sm">Sentiment Analysis</h4>
-                            <p className="text-xs text-muted-foreground">
-                              Detect emotions and sentiment in employee feedback
-                            </p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-start space-x-3">
-                          <div className="p-2 bg-primary/10 rounded-full">
-                            <Settings className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <h4 className="font-medium text-sm">Customizable Responses</h4>
-                            <p className="text-xs text-muted-foreground">
-                              Tailored responses based on company policies and procedures
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <h3 className="font-medium text-lg mt-6">Use Cases</h3>
-                      <div className="space-y-2">
-                        <div className="p-3 bg-muted/40 rounded-lg">
-                          <p className="text-sm font-medium">Employee Self-Service</p>
-                          <p className="text-xs text-muted-foreground">
-                            Voice-controlled access to HR information and services
-                          </p>
-                        </div>
-                        <div className="p-3 bg-muted/40 rounded-lg">
-                          <p className="text-sm font-medium">HR Analytics Queries</p>
-                          <p className="text-xs text-muted-foreground">
-                            Natural language access to complex HR data and reports
-                          </p>
-                        </div>
-                        <div className="p-3 bg-muted/40 rounded-lg">
-                          <p className="text-sm font-medium">Automated Interviews</p>
-                          <p className="text-xs text-muted-foreground">
-                            AI-powered initial candidate screening interviews
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <ConversationalInterface />
             </TabsContent>
             
-            {/* Low-Code Builder Content */}
             <TabsContent value="low-code">
               <Card>
                 <CardHeader>
@@ -484,7 +360,6 @@ const Analytics = () => {
               </Card>
             </TabsContent>
             
-            {/* AI Training Content */}
             <TabsContent value="ai-training">
               <Card>
                 <CardHeader>
@@ -620,153 +495,8 @@ const Analytics = () => {
               </Card>
             </TabsContent>
             
-            {/* Digital Twin Content */}
             <TabsContent value="digital-twin">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Construction Site Digital Twin</CardTitle>
-                  <CardDescription>
-                    Real-time 3D visualization and progress tracking for construction projects
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <div className="lg:col-span-2">
-                      <div className="rounded-lg overflow-hidden border bg-muted/20 p-1">
-                        <div className="bg-zinc-900 rounded-lg h-[400px] relative flex items-center justify-center">
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <Construction className="h-16 w-16 text-white/20" />
-                          </div>
-                          <div className="absolute bottom-4 right-4 flex space-x-2">
-                            <Button size="sm" variant="secondary">
-                              <Eye className="h-4 w-4 mr-1" />
-                              View Live
-                            </Button>
-                            <Button size="sm">
-                              <Building className="h-4 w-4 mr-1" />
-                              3D Model
-                            </Button>
-                          </div>
-                          <div className="absolute top-4 left-4 bg-black/40 text-white text-xs px-2 py-1 rounded">
-                            Digital Twin Visualization
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-6">
-                        <h3 className="font-medium text-lg mb-4">Construction Progress</h3>
-                        <div className="h-64">
-                          <ResponsiveContainer width="100%" height="100%">
-                            <AreaChart
-                              data={constructionData}
-                              margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-                            >
-                              <CartesianGrid strokeDasharray="3 3" />
-                              <XAxis dataKey="day" />
-                              <YAxis />
-                              <Tooltip />
-                              <Legend />
-                              <Area type="monotone" dataKey="planned" name="Planned Progress" stroke="#4f46e5" fill="#4f46e5" fillOpacity={0.2} />
-                              <Area type="monotone" dataKey="actual" name="Actual Progress" stroke="#10b981" fill="#10b981" fillOpacity={0.2} />
-                            </AreaChart>
-                          </ResponsiveContainer>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-6">
-                      <div>
-                        <h3 className="font-medium text-lg mb-4">Project Insights</h3>
-                        <div className="space-y-3">
-                          <div className="p-4 border border-primary/20 bg-primary/5 rounded-lg">
-                            <div className="flex items-start">
-                              <div className="mr-3 mt-0.5">
-                                <Brain className="h-5 w-5 text-primary" />
-                              </div>
-                              <div>
-                                <h4 className="font-medium text-sm">Deviation Alert</h4>
-                                <p className="text-xs text-muted-foreground mt-1">
-                                  East wing construction is 2.3% behind schedule. AI suggests adding 2 additional workers to catch up.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="p-4 border border-primary/20 bg-primary/5 rounded-lg">
-                            <div className="flex items-start">
-                              <div className="mr-3 mt-0.5">
-                                <Brain className="h-5 w-5 text-primary" />
-                              </div>
-                              <div>
-                                <h4 className="font-medium text-sm">Material Forecast</h4>
-                                <p className="text-xs text-muted-foreground mt-1">
-                                  Concrete supply needs to be increased by 15% for next week's scheduled foundation work.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          <div className="p-4 border border-primary/20 bg-primary/5 rounded-lg">
-                            <div className="flex items-start">
-                              <div className="mr-3 mt-0.5">
-                                <Brain className="h-5 w-5 text-primary" />
-                              </div>
-                              <div>
-                                <h4 className="font-medium text-sm">Safety Recommendation</h4>
-                                <p className="text-xs text-muted-foreground mt-1">
-                                  IoT sensors detect increased dust levels in sector B4. Consider additional ventilation.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h3 className="font-medium text-lg mb-4">Data Sources</h3>
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between p-3 bg-muted/40 rounded-lg">
-                            <div className="flex items-center">
-                              <div className="p-1.5 bg-blue-100 rounded-full mr-2">
-                                <Eye className="h-4 w-4 text-blue-600" />
-                              </div>
-                              <span className="text-sm">Drone Imagery</span>
-                            </div>
-                            <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Live</span>
-                          </div>
-                          
-                          <div className="flex items-center justify-between p-3 bg-muted/40 rounded-lg">
-                            <div className="flex items-center">
-                              <div className="p-1.5 bg-amber-100 rounded-full mr-2">
-                                <Settings className="h-4 w-4 text-amber-600" />
-                              </div>
-                              <span className="text-sm">IoT Sensors</span>
-                            </div>
-                            <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">Live</span>
-                          </div>
-                          
-                          <div className="flex items-center justify-between p-3 bg-muted/40 rounded-lg">
-                            <div className="flex items-center">
-                              <div className="p-1.5 bg-purple-100 rounded-full mr-2">
-                                <FileText className="h-4 w-4 text-purple-600" />
-                              </div>
-                              <span className="text-sm">BIM Models</span>
-                            </div>
-                            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">Synced</span>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <Button className="w-full">
-                          Generate Comprehensive Report
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <ConstructionSiteViewer />
             </TabsContent>
           </Tabs>
         </div>
