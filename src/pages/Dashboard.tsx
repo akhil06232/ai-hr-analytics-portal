@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { DashboardCard } from '@/components/dashboard/DashboardCard';
@@ -7,7 +6,7 @@ import { EmployeeChart } from '@/components/dashboard/EmployeeChart';
 import { AnalyticsCard } from '@/components/dashboard/AnalyticsCard';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Users, UserCheck, Clock, Award, Brain, ArrowRight, Lightbulb, Briefcase } from 'lucide-react';
+import { Users, UserCheck, Clock, Award, Brain, ArrowRight, Lightbulb, Briefcase, Cpu } from 'lucide-react';
 
 // Sample data
 const employeeData = [
