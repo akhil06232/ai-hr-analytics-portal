@@ -12,7 +12,7 @@ import {
 import { 
   BarChart3, LineChart as LineChartIcon, PieChart, 
   FileText, Brain, Cpu, Eye, Code, LayoutGrid, 
-  Settings, VoiceIcon, Construction, Building, 
+  Settings, Mic, Construction, Building, 
   BarChartHorizontal, ArrowRight, Download
 } from 'lucide-react';
 
@@ -64,7 +64,7 @@ const Analytics = () => {
                 Analytics Studio
               </TabsTrigger>
               <TabsTrigger value="conversational">
-                <VoiceIcon className="mr-2 h-4 w-4" />
+                <Mic className="mr-2 h-4 w-4" />
                 Conversational AI
               </TabsTrigger>
               <TabsTrigger value="low-code">
@@ -301,7 +301,7 @@ const Analytics = () => {
                             className="flex-1 px-3 py-2 rounded-md border border-input bg-background text-sm ring-offset-background" 
                           />
                           <Button>
-                            <VoiceIcon className="h-4 w-4" />
+                            <Mic className="h-4 w-4" />
                           </Button>
                         </div>
                       </div>
@@ -317,7 +317,7 @@ const Analytics = () => {
                       <div className="space-y-3">
                         <div className="flex items-start space-x-3">
                           <div className="p-2 bg-primary/10 rounded-full">
-                            <VoiceIcon className="h-4 w-4 text-primary" />
+                            <Mic className="h-4 w-4 text-primary" />
                           </div>
                           <div>
                             <h4 className="font-medium text-sm">Voice Recognition</h4>
